@@ -664,11 +664,11 @@ const getSuggestedUsers = async (req, res) => {
 const getSearchedUser = async (req, res) => {
 
     try {
-        const loggedInUser = req.user;
-        if (!loggedInUser) {
+        const userId = req.user._id;
+        if (!userId) {
             return res.status(401).json({ error: `Unauthorised, you must be logged in to perform searches` })
         }
-        const userId = loggedInUser.id;
+
 
         // get request ma ta body nai use garna mildo rahina xa 
         // so parameter ma pathanu paryo data
@@ -711,5 +711,7 @@ const getSearchedUser = async (req, res) => {
 
 
 }
+
+export { signupUser, loginUser, logoutUser, followUnfollowUser, updateUserProfile, getUserProfile, getSuggestedUsers, getSearchedUser }
 
 export { signupUser, loginUser, logoutUser, followUnfollowUser, updateUserProfile, getUserProfile, getSuggestedUsers, getSearchedUser }
