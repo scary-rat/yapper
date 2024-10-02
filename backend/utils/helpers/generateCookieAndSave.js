@@ -12,7 +12,8 @@ const generateCookieAndSave = (userId, res) => {
         httpOnly: true,
         maxAge: 15 * 24 * 60 * 60 * 1000, //yes ma directly "15d" lekhna mildaina, hamile ms ma time dinu parxa
         // sameSite: "strict" // yo pani security ko lagi ho re, CSRF attack lie prevent garna re
-        sameSite: "none" // deployment garda kheri yeslie none rakhyo vani matra chaldo rahixa natra chaldo rahinaxa
+        sameSite: "none", // deployment garda kheri yeslie none rakhyo vani matra chaldo rahixa natra chaldo rahinaxa
+        secure: true,
 
     })
     console.log("cookie created and saved")
