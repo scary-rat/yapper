@@ -52,6 +52,10 @@ const Search = () => {
             });
 
             const data = await res.json();
+            if (data.error) {
+                console.log(data.error);
+                return;
+            }
             setSearchResult(() => data);
             console.log(data);
         } catch (error) {
